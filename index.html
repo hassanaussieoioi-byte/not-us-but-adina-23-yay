@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+<meta name="theme-color" content="#1a0207" />
+<meta name="robots" content="noindex, nofollow, noarchive, nosnippet" />
+<meta name="description" content="A small something, made for one person only." />
+<title>Happy 23rd Birthday, Adina 💖</title>
+<link rel="stylesheet" href="styles.css" />
+</head>
+<body class="is-locked">
+
+<div class="app" id="app">
+
+  <!-- ── Act 1 · Consent gate ───────────────────────────────────────────── -->
+  <section class="scene scene--gate is-active" id="scene-gate" aria-labelledby="gate-title">
+    <div class="hearts" id="hearts-gate" aria-hidden="true"></div>
+
+    <div class="gate-card glass">
+      <p class="eyebrow">Before you begin</p>
+      <h1 class="gate-title" id="gate-title">
+        Happy 23<sup>rd</sup> Birthday, Adina <span class="glyph">💖</span>
+      </h1>
+
+      <label class="consent" for="consent-box">
+        <input type="checkbox" id="consent-box" class="consent__input" />
+        <span class="consent__mark" aria-hidden="true"></span>
+        <span class="consent__text">
+          I take my own responsibility of viewing this page and i don't miss you anymore
+        </span>
+      </label>
+
+      <button class="btn btn--primary" id="consent-btn" type="button" disabled>
+        I Consent
+      </button>
+
+      <p class="gate-hint" id="gate-hint" role="status">Tick the box to continue.</p>
+    </div>
+  </section>
+
+  <!-- ── Act 2 · The letter ─────────────────────────────────────────────── -->
+  <section class="scene scene--letter is-off" id="scene-letter" aria-labelledby="letter-title">
+    <div class="hearts hearts--soft" id="hearts-letter" aria-hidden="true"></div>
+
+    <h2 class="sr-only" id="letter-title">A letter for you</h2>
+    <p class="sr-only" id="letter-full"></p>
+
+    <div class="letter-wrap">
+      <p class="letter" id="letter" aria-hidden="true"><span class="caret" id="caret" aria-hidden="true"></span></p>
+    </div>
+
+    <div class="scene-bar">
+      <button class="btn btn--ghost is-hidden" id="scroll-cue" type="button">
+        Scroll down <span aria-hidden="true">&darr;</span>
+      </button>
+    </div>
+  </section>
+
+  <!-- ── Act 3 · The descent ────────────────────────────────────────────── -->
+  <section class="descent is-off" id="descent" aria-labelledby="descent-title">
+    <h2 class="sr-only" id="descent-title">One more thing, on the floor</h2>
+
+    <div class="descent__stage">
+      <div class="descent__zoom" id="descent-zoom">
+        <div class="hearts hearts--soft" aria-hidden="true"></div>
+        <div class="floor" aria-hidden="true"></div>
+
+        <button class="locket" id="locket" type="button" tabindex="-1"
+                aria-label="Pick up the locket">
+          <span class="locket__glow" aria-hidden="true"></span>
+          <svg class="locket__art" viewBox="0 0 120 140" aria-hidden="true">
+            <defs>
+              <linearGradient id="lg" x1="0" y1="0" x2="1" y2="1">
+                <stop offset="0" stop-color="#ffe6b0" />
+                <stop offset=".45" stop-color="#e8a33d" />
+                <stop offset="1" stop-color="#8c5a12" />
+              </linearGradient>
+              <radialGradient id="hr" cx=".38" cy=".3" r=".85">
+                <stop offset="0" stop-color="#ff7d95" />
+                <stop offset="1" stop-color="#a30b28" />
+              </radialGradient>
+            </defs>
+            <path d="M60 26v-14a10 10 0 0 1 20 0" fill="none"
+                  stroke="url(#lg)" stroke-width="4" stroke-linecap="round" />
+            <path d="M60 30C42 12 10 30 14 60c5 36 44 56 46 62 2-6 41-26 46-62 4-30-28-48-46-30z"
+                  fill="url(#hr)" stroke="url(#lg)" stroke-width="4" />
+            <circle cx="60" cy="62" r="9" fill="#2c0409" opacity=".55" />
+            <path d="M60 68v18" stroke="#2c0409" stroke-width="5"
+                  stroke-linecap="round" opacity=".55" />
+          </svg>
+        </button>
+
+        <div class="vignette" aria-hidden="true"></div>
+      </div>
+
+      <p class="descent__cue" id="descent-cue" role="status">Keep scrolling&hellip;</p>
+
+      <button class="btn btn--ghost descent__skip is-hidden" id="descent-skip" type="button">
+        Take me there <span aria-hidden="true">&rarr;</span>
+      </button>
+    </div>
+  </section>
+
+  <!-- ── Act 4 · Cut the thread ─────────────────────────────────────────── -->
+  <section class="scene scene--challenge is-off" id="scene-challenge"
+           aria-labelledby="challenge-heading">
+    <h2 class="sr-only" id="challenge-heading">Cut the thread</h2>
+
+    <div class="stage" id="challenge-stage">
+      <svg class="thread" id="thread" aria-hidden="true"></svg>
+      <div class="hits" id="hits" aria-hidden="true"></div>
+
+      <div class="target" id="target" aria-hidden="true">
+        <span class="target__ring"></span>
+        <img id="target-img" alt="" draggable="false" />
+      </div>
+    </div>
+
+    <div class="hud" aria-hidden="true">
+      <div class="hud__count">
+        <span id="tries">3</span>
+        <small>tries left</small>
+      </div>
+    </div>
+
+    <div class="dialog-backdrop" id="challenge-dialog">
+      <div class="dialog glass" role="dialog" aria-modal="true"
+           aria-labelledby="dialog-title" aria-describedby="dialog-body">
+        <h2 id="dialog-title">One last thing</h2>
+        <p id="dialog-body">
+          This target is still hanging on a thread. You get <strong>three</strong>
+          taps. Every tap frays it &mdash; miss, and it slips somewhere else.
+          On the third, the thread lets go.
+        </p>
+        <button class="btn btn--primary" id="dialog-start" type="button">I&rsquo;m ready</button>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── Act 5 · Reveal ────────────────────────────────────────────────── -->
+  <section class="scene scene--reveal is-off" id="scene-reveal" aria-labelledby="reveal-title">
+    <div class="hearts" id="hearts-reveal" aria-hidden="true"></div>
+    <div class="burst" id="burst" aria-hidden="true"></div>
+
+    <div class="reveal__frame">
+      <img id="reveal-img"
+           alt="A picture of everyone celebrating a birthday" />
+    </div>
+
+    <div class="reveal__overlay">
+      <h2 class="reveal__title" id="reveal-title">
+        Happy 23<sup>rd</sup> Birthday, Adina <span class="glyph">❤️</span>
+      </h2>
+      <p class="reveal__sub">You deserve a good one.</p>
+      <div class="reveal__actions">
+        <button class="btn btn--ghost" id="mute-btn" type="button" aria-pressed="false">
+          Mute
+        </button>
+        <button class="btn btn--ghost" id="replay-btn" type="button">Watch it again</button>
+      </div>
+    </div>
+  </section>
+
+</div>
+
+<button class="sound-chip is-hidden" id="sound-chip" type="button">
+  <span aria-hidden="true">🔈</span> Tap for sound
+</button>
+
+<p class="sr-only" id="live" role="status" aria-live="polite"></p>
+
+<audio id="music-loop" src="assets/site-music.mp3" loop preload="auto"></audio>
+<audio id="music-final" src="assets/final.mp3" loop preload="none"></audio>
+
+<script src="app.js" defer></script>
+</body>
+</html>

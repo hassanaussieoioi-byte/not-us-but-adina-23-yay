@@ -1,0 +1,13 @@
+# OS noise
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# Editor
+.vscode/
+.idea/
+*.swp
+
+# OneDrive sync-conflict leftovers
+*-Pc.conflict*
+*conflict*
